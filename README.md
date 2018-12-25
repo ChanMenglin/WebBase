@@ -47,7 +47,7 @@ body 元素 的内容会直接出现在页面上。
 > 括号中的内容为对应标签在 HTML5 中的语义，更多内容可访问：  
 https://developer.mozilla.org/zh-CN/docs/Glossary/语义#语义化元素
 
-* 块级元素 - div / section（文章、文字） / article（文章） / aside（侧边栏、广告） / nav（菜单、导航） / header（头部） / footer（尾部） / i（icon 图标）
+* 块级元素 - div / section（文章、文字） / article（文章） / aside（侧边栏、广告） / nav（菜单、导航） / header（头部） / footer（尾部） / i（icon 图标）
 * 段落元素 - p
 * 行内元素 - span / label / em（强调 - 斜体） / strong（强调 - 粗体）
 * 表格元素 - [table](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table) / thead / tbody / tr / td / th

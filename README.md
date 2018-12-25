@@ -18,7 +18,7 @@
 
 ## 1. HTML
 
-[h5o - HTML 大纲算法工具](http://h5o.github.io)
+[h5o - HTML 大纲算法工具](http://h5o.github.io)
 
 ### 1.1 HTML 常见元素
 
@@ -30,8 +30,8 @@ head 元素 不会在页面上留下直接的内容，主要为页面相关资�
     * `<meta charset='utf-8'>` - `charset`表示页面使用的字符集
     * `<mate name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no‘>` - 控制缩放（此属性对多端适配非常有用）
         * `name='viewport'` - 视口，表示页面显示的范围
-        * `width=device-width` - 显示宽度，`device-width` - 此处为设备宽度
-        * `initial-scale=1.0` - 默认缩放，此处为1
+        * `width=device-width` - 显示宽度，`device-width` - 此处为设备宽度
+        * `initial-scale=1.0` - 默认缩放，此处为1
         * `maximum-scale=1.0` - 最大缩放，此处为1
         * `user-scalable=no` - 用户缩放，此处为不允许用户缩放
 * 标题 - [title](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/title)

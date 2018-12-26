@@ -27,7 +27,7 @@
 
 ## 1. HTML
 
-[h5o - HTML 大纲算法工具](http://h5o.github.io)
+[h5o - HTML 大纲算法工具](http://h5o.github.io)
 
 ### 1.1 HTML 常见元素
 
@@ -39,8 +39,8 @@ head 元素 不会在页面上留下直接的内容，主要为页面相关资�
     * `<meta charset='utf-8'>` - `charset`表示页面使用的字符集
     * `<mate name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no‘>` - 控制缩放（此属性对多端适配非常有用）
         * `name='viewport'` - 视口，表示页面显示的范围
-        * `width=device-width` - 显示宽度，`device-width` - 此处为设备宽度
-        * `initial-scale=1.0` - 默认缩放，此处为1
+        * `width=device-width` - 显示宽度，`device-width` - 此处为设备宽度
+        * `initial-scale=1.0` - 默认缩放，此处为1
         * `maximum-scale=1.0` - 最大缩放，此处为1
         * `user-scalable=no` - 用户缩放，此处为不允许用户缩放
 * 标题 - [title](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/title)
@@ -56,7 +56,7 @@ body 元素 的内容会直接出现在页面上。
 > 括号中的内容为对应标签在 HTML5 中的语义，更多内容可访问：  
 https://developer.mozilla.org/zh-CN/docs/Glossary/语义#语义化元素
 
-* 块级元素 - div / section（文章、文字） / article（文章） / aside（侧边栏、广告） / nav（菜单、导航） / header（头部） / footer（尾部） / i（icon 图标）
+* 块级元素 - div / section（文章、文字） / article（文章） / aside（侧边栏、广告） / nav（菜单、导航） / header（头部） / footer（尾部） / i（icon 图标）
 * 段落元素 - p
 * 行内元素 - span / label / em（强调 - 斜体） / strong（强调 - 粗体）
 * 表格元素 - [table](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table) / thead / tbody / tr / td / th
@@ -77,7 +77,7 @@ https://developer.mozilla.org/zh-CN/docs/Glossary/语义#语义化元素
             * `reset`重置按钮（form中生效）
 * 链接 - a / img
     * [a](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a)
-        * `a[href]` - 链接地址
+        * `a[href]` - 链接地址
         * `a[target]` - 指定在哪里打开链接，`_self`(默认)在当前窗口打开；`_blank`新窗口打开
     * img
         * `img[src]` - 图片地址
@@ -127,7 +127,7 @@ CSS Reset 重置默认样式
 ](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)
 [CSS 教程
 ](https://developer.mozilla.org/zh-CN/docs/Learn/CSS) | 
-[CSS 文档
+[CSS 文档
 ](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
 
 ### 2.1 CSS 基础
@@ -145,7 +145,7 @@ CSS Reset 重置默认样式
 
 #### 2.1.2 [选择器](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/Selectors)
 
-* 匹配 HTML 元素
+* 匹配 HTML 元素
 * 有不同的匹配规则
 * 多个选择器可叠加
 
@@ -153,7 +153,7 @@ CSS Reset 重置默认样式
 
 1. 元素选择器 - a
 2. [伪元素](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-elements)选择器 - ::before
-3. 类选择器 - .class-name
+3. 类选择器 - .class-name
 4. 属性选择器 - [Property-name=Property-value]
 5. [伪类](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)选择器 - :hover
 6. ID 选择器 - #id-name
@@ -175,8 +175,8 @@ CSS Reset 重置默认样式
 属性生效的其它规则：
 
 * !important 优先级最高（除了另一个!important，谁不可覆盖）
-* 内联样式 优先级高（高于 ID 选择器）
-* 相同权重 后写的生效
+* 内联样式 优先级高（高于 ID 选择器）
+* 相同权重 后写的生效
 
 ### 2.2 CSS [布局](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout)
 
@@ -184,7 +184,7 @@ CSS Reset 重置默认样式
 
 * 文字 - [字体](#2211-文字---字体)、字重、颜色、大小、行高
 * 盒子 - 背景、边框
-* 页面 - 滚动、换行
+* 页面 - 滚动、换行
 * 装饰性样式 - 粗体、斜体、下划线
 * 其它
 
@@ -202,7 +202,7 @@ CSS Reset 重置默认样式
 > ```
 > 由于苹果用户在安装Office后也会有 `Microsoft Yahei`，但 `Microsoft Yahei` 在Mac上的效果不如 `PingFang SC` 因此将 `PingFang SC` 在前面
 
-### 2.4 CSS 效果
+### 2.4 CSS 效果
 
 ### 2.5 CSS 动画
 

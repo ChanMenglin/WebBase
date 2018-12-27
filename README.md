@@ -23,7 +23,16 @@
     * [2.2 CSS 布局](#22-css-布局)
         * [2.2.1 非布局样式](#221-非布局样式)
             * [2.2.1.1 文字 - 字体](#2211-文字---字体)
-
+            * [2.2.1.2 文字 - 行高](#2212-文字---行高)
+        * [2.3.1 table 布局](#231-table-布局)
+        * [2.3.2 display and position](#232-display-and-position)
+            * [2.3.2.1 盒子模型](#2321=盒子模型)
+            * [2.3.2.2 display - 元素的显示类型](#2322-display---元素的显示类型)
+            * [2.3.2.3 position - 元素的位置](#2323-position---元素的位置)
+        * [2.3.3 flexbox 布局](#233-flexbox-布局)
+        * [2.3.4 float 布局](#234-float-布局)
+        * [2.3.5 inline-block 布局](#235-inline-block-布局)
+        * [2.3.6 响应式布局](#236-响应式布局)
 
 ## 1. HTML
 
@@ -182,25 +191,279 @@ CSS Reset 重置默认样式
 
 #### 2.2.1 非布局样式
 
-* 文字 - [字体](#2211-文字---字体)、字重、颜色、大小、行高
+* 文字 - [字体](#2211-文字---字体)、字重(font-weight)、颜色、大小、[行高](#2212-文字---行高)
 * 盒子 - 背景、边框
 * 页面 - 滚动、换行
-* 装饰性样式 - 粗体、斜体、下划线
-* 其它
+* 装饰性样式 - 粗体(font-weight)、斜体(font-style:itatic)、下划线(text-decoration)
+* 其它 - 指针(cursor:point)、[CSS Hack](https://en.wikipedia.org/wiki/CSS_hack) (目前较少使用)
 
 ##### 2.2.1.1 文字 - 字体
 
 * 字体族（使用字体族时不要加引号）  
     serif(衬线字体)、sans-serif(非衬线字体)、monospace(等宽字体)、cursive(手写体)、fantasy(花体)
 * 多字体（fallback）  
-* 网络字体、自定义字体  
-* iconfont  
+* [网络字体、自定义字体](#网络字体\自定义字体)  
+* iconfont: https://www.iconfont.cn
 
 > 在声明字体时先写平台独有的字体再加字体族是一个好的习惯
 > ```css
 > font-family: "PingFang SC", "Microsoft Yahei", monospace;
 > ```
 > 由于苹果用户在安装Office后也会有 `Microsoft Yahei`，但 `Microsoft Yahei` 在Mac上的效果不如 `PingFang SC` 因此将 `PingFang SC` 在前面
+
+###### 网络字体\自定义字体
+
+```css
+/* 声明一个字体 */
+@font-face {
+    font-family: "IF";
+    src: url("...")
+}
+font-family: "IF";
+```
+
+##### 2.2.1.2 文字 - 行高
+
+行高由 line box 的高度决定，line box 的高度由 inline box 的高度决定
+
+### 2.3 [CSS 布局](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout)
+
+常用布局：
+
+* [table 表格布局](#231-table-布局)
+* [float 浮动 + margin](#234-float-布局)
+* [inline-block 布局](#235-inline-block-布局)
+* [flexbox 布局](#233-flexbox-布局)
+
+#### 2.3.1 table 布局
+
+```html
+<table>
+    <thead>
+        <!-- <th></th>会将标题加粗显示,此处为示范，实际生产中不建议将<td>同<th>混用 -->
+        <td>标题1</td><td>标题2</td><th>加粗标题</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1-1</td><td>1-2</td><td>1-3</td>
+        </tr>
+        <tr>
+           <td colspan="2">2-1 (跨两列)</td><td  rowspan=“2”>2-3 (跨两行)</td>
+        </tr>
+        <tr>
+           <td>3-1</td><td>3-2</td>
+        </tr>
+    </tbody>
+</table>
+
+```
+
+```html
+<style>
+    .table {
+        display: table;
+    }
+    .table-row {
+        display: table-row;
+    }
+    .table-cell {
+        display: table-cell;
+    }
+</style>
+<div class="table">
+    <div class="table-row">
+        <div class="table-cell">1-1</div>
+        <div class="table-cell">1-2</div>
+    </div>
+    <div class="table-row">
+        <div class="table-cell">2-1</div>
+        <div class="table-cell">2-2</div>
+    </div>
+</div>
+```
+
+#### 2.3.2 display and position
+
+##### 2.3.2.1 盒子模型
+
+![盒模型](img/盒模型.jpg)
+
+盒子占用的空寂 = height/width(content) + padding + border
+
+##### 2.3.2.2 [display](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display) - 元素的显示类型
+
+常用属性：
+
+* block(块级元素) - 有独立宽高，默认占据一行
+* inline(内联元素/行内元素) - 没有独立宽高，默认不独立占据一行（类似于文本）
+* inline-block(行内快极元素) - 对内相当于block有独立的宽高；对外相当于inline不会独立占据一行（类似于文本）
+
+##### 2.3.2.3 [position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/position) - 元素的位置
+
+常用属性：
+
+* static(静态布局，默认) - 文档流。不可添加 z-index 样式。
+* relative(相对定位) - 相对于元素本身，relative 的偏移(top/left/right)，相对于元素本身，偏移后占用空间的计算仍按偏移之前的位置进行计算（偏移时不会改变它占据的空间）。可添加 z-index 样式定义层级。
+* absolute(绝对定位) - 相对于最近的 relative 或 absolute(父元素) 定位，如果找不到则相对于 body 定位，脱离文档流，不会对其它元素的布局产生影响。可添加 z-index 样式定义层级。
+* fixed(固定定位) - 相对于可视区域定位，脱离文档流，不会对其它元素的布局产生影响。可添加 z-index 样式定义层级。
+
+#### 2.3.3 [flexbox](https://developer.mozilla.org/en-US/docs/Glossary/Flexbox) 布局
+
+* 弹性盒子
+* 盒子不来就是并列的
+
+[兼容性](https://caniuse.com/#search=flexbox) 不好，慎用
+
+```html
+<style>
+    .container{
+        width:800px;
+        height:200px;
+        display: flex;
+    }
+    .left{ /* 固定宽度 */
+        background: red;
+        display: flex;
+        width:200px;
+    }
+    .right{ /* 自适应宽度 */
+        background: blue;
+        display: flex;
+        flex:1;
+    }
+</style>
+<div class="container">
+    <div class="left">
+        左
+    </div>
+    <div class="right">
+        右
+    </div>
+</div>
+```
+
+#### 2.3.4 [float 布局](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Floats)
+
+* 元素“浮动”
+* 脱离文档流 - 不影响其他元素的布局
+* 不脱离文本流 - 影响文本的布局
+
+对自身的影响：
+
+* 形成快（BFC）- 自主控制宽高，无论是什么元素
+* 位置尽量靠上
+* 位置尽量靠左（float: left）/右（float: right）
+
+对兄弟元素的影响：
+
+* 上面一般贴非 float 元素
+* 身边贴 float 元素
+* 不影响其它元素的位置
+* 影响其它快极元素的文本
+
+对父级元素的影响：
+
+* 从布局上”消失“
+* 高度塌陷 - 可添加 `overflow: auto` 解决此问题
+
+```css
+/* 解决 float 元素的父元素的影响 */
+.container {
+    content: ' ';
+    clear: both; /* 清除浮动 */
+    display: block;
+    visibility: hidden;
+    height: 0;
+}
+```
+
+```html
+<style>
+    .container{
+        width:800px;
+        height:200px;
+    }
+    .left{
+        background:red;
+        /* float:left; */
+        /* height:100%; */
+        width:200px;
+        position: absolute;
+        height:200px;
+    }
+    .right{
+        background:blue;
+        float:right;
+        width:200px;
+        height:100%;
+    }
+    .middle{
+        margin-left:200px;
+        margin-right:200px;
+    }
+    
+</style>
+<div class="container">
+    <div class="left">
+        左
+    </div>
+    <div class="right">
+        右
+    </div>
+    <div class="middle">
+        中间
+    </div>
+</div>
+```
+
+#### 2.3.5 inline-block 布局
+
+* 像文本一样排 block 元素
+* 没有清除浮动的问题
+* 需要处理间隙
+
+```html
+<style>
+    .container{
+        width:800px;
+        height:200px;
+        font-size:0;
+    }
+    .left{
+        font-size:14px;
+        background:red;
+        display: inline-block;
+        width:200px;
+        height:200px;
+    }
+    .right{
+        font-size:14px;
+        background:blue;
+        display: inline-block;
+        width:600px;
+        height:200px;
+    }
+    
+</style>
+<div class="container">
+    <div class="left">
+        左
+    </div>
+    <div class="right">
+        右
+    </div>
+</div>
+```
+
+#### 2.3.6 响应式布局
+
+* 在不同设备上正常使用
+* 一般主要处理屏幕大小
+* 主要方法：
+    * 隐藏 + 折行 + 自适应空间
+    * rem(根据字体大小调整) / [viewport](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@viewport) / [media query(媒体查询)](https://developer.mozilla.org/zh-CN/docs/Web/CSS/媒体查询)
+
+viewport - `<mate name='viewport' content='width=device-wid th, initial-scale=1.0, maximum-scale=1.0, user-scalable=no‘>` 
 
 ### 2.4 CSS 效果
 

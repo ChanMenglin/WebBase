@@ -26,7 +26,7 @@
             * [2.2.1.2 文字 - 行高](#2212-文字---行高)
         * [2.3.1 table 布局](#231-table-布局)
         * [2.3.2 display and position](#232-display-and-position)
-            * [2.3.2.1 盒子模型](#2321=盒子模型)
+            * [2.3.2.1 盒子模型](#2321-盒子模型)
             * [2.3.2.2 display - 元素的显示类型](#2322-display---元素的显示类型)
             * [2.3.2.3 position - 元素的位置](#2323-position---元素的位置)
         * [2.3.3 flexbox 布局](#233-flexbox-布局)
@@ -240,7 +240,7 @@ font-family: "IF";
 ```html
 <table>
     <thead>
-        <!-- <th></th>会将标题加粗显示,此处为示范，实际生产中不建议将<td>同<th>混用 -->
+        <!-- <th></th>会将标题加粗显示,此处为示范，实际生产中不建议将<td>同<th>混用 -->
         <td>标题1</td><td>标题2</td><th>加粗标题</th>
     </thead>
     <tbody>
@@ -248,7 +248,7 @@ font-family: "IF";
             <td>1-1</td><td>1-2</td><td>1-3</td>
         </tr>
         <tr>
-           <td colspan="2">2-1 (跨两列)</td><td  rowspan=“2”>2-3 (跨两行)</td>
+           <td colspan="2">2-1 (跨两列)</td><td  rowspan=“2”>2-3 (跨两行)</td>
         </tr>
         <tr>
            <td>3-1</td><td>3-2</td>
@@ -288,7 +288,7 @@ font-family: "IF";
 
 ![盒模型](img/盒模型.jpg)
 
-盒子占用的空寂 = height/width(content) + padding + border
+盒子占用的空寂 = height/width(content) + padding + border
 
 ##### 2.3.2.2 [display](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display) - 元素的显示类型
 
@@ -304,7 +304,7 @@ font-family: "IF";
 
 * static(静态布局，默认) - 文档流。不可添加 z-index 样式。
 * relative(相对定位) - 相对于元素本身，relative 的偏移(top/left/right)，相对于元素本身，偏移后占用空间的计算仍按偏移之前的位置进行计算（偏移时不会改变它占据的空间）。可添加 z-index 样式定义层级。
-* absolute(绝对定位) - 相对于最近的 relative 或 absolute(父元素) 定位，如果找不到则相对于 body 定位，脱离文档流，不会对其它元素的布局产生影响。可添加 z-index 样式定义层级。
+* absolute(绝对定位) - 相对于最近的 relative 或 absolute(父元素) 定位，如果找不到则相对于 body 定位，脱离文档流，不会对其它元素的布局产生影响。可添加 z-index 样式定义层级。
 * fixed(固定定位) - 相对于可视区域定位，脱离文档流，不会对其它元素的布局产生影响。可添加 z-index 样式定义层级。
 
 #### 2.3.3 [flexbox](https://developer.mozilla.org/en-US/docs/Glossary/Flexbox) 布局
@@ -357,7 +357,7 @@ font-family: "IF";
 对兄弟元素的影响：
 
 * 上面一般贴非 float 元素
-* 身边贴 float 元素
+* 身边贴 float 元素
 * 不影响其它元素的位置
 * 影响其它快极元素的文本
 
@@ -466,6 +466,47 @@ font-family: "IF";
 viewport - `<mate name='viewport' content='width=device-wid th, initial-scale=1.0, maximum-scale=1.0, user-scalable=no‘>` 
 
 ### 2.4 CSS 效果
+
+效果属性：
+
+* [box-shadow](#241-box-shadow-阴影) - 投影(阴影)
+* [text-shadow](#242-text-shadow-文字阴影) - 文字投影(阴影)
+* [border-radius](#243-border-radius-圆角) - 圆角
+* [background](#244-background-背景) - 背景
+* [clip-path](#245-clip-path-裁剪) - 裁剪
+
+#### 2.4.1 [box-shadow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow) 阴影
+
+![box-shadow](img/box-shadow.jpg)
+
+* 营造立体感（层次感）
+* 充当没有宽度的边框 - `box-shadow:0, 0, 0, 5px, #000;` 就可以画出一个 5px 宽的黑色边框。
+* 特殊效果
+
+#### 2.4.2 [text-shadow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-shadow) 文字阴影
+
+* 营造立体感（层次感）
+* 品质感
+
+#### 2.4.3 [border-radius](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-radius) 圆角
+
+* 圆角矩形 `border-radius: 10px;`
+* 圆形 `border-radius: 50%;`
+* 半圆 / 扇形 `border-top-left-radius: 100%;`
+* 奇怪的角
+
+#### 2.4.4 [background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background) 背景
+
+* 纹理、图案
+* 渐变
+* [雪碧图](https://zh.wikipedia.org/wiki/精灵图)动画
+* 背景图尺寸适应
+
+#### 2.4.5 [clip-path](https://developer.mozilla.org/zh-CN/docs/Web/CSS/clip-path) 裁剪
+
+* 裁剪容器
+* 按几何图形裁剪
+* 自定义图形裁剪
 
 ### 2.5 CSS 动画
 

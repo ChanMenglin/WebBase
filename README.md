@@ -42,7 +42,8 @@
         * [2.4.5 clip-path 裁剪](#245-clip-path-裁剪)
     * [2.5 CSS 动画](#25-css-动画)
         * [2.5.1 transition 补间动画](#251-transition-补间动画)
-        * [2.5.2 animations(keyframe) 关键帧动画](#252-animations(keyframe)-关键帧动画)
+        * [2.5.2 animations(keyframe) 关键帧动画](#252-animationskeyframe-关键帧动画)
+    * [2.6 CSS 预处理器](#26-css-预处理器)
 
 ## 1. HTML
 
@@ -523,7 +524,7 @@ viewport - `<mate name='viewport' content='width=device-wid th, initial-scale=1.
 CSS 中动画的类型：
 
 * [transition](#251-transition-补间动画) 补间动画
-* [keyframe](#252-animations(keyframe)-关键帧动画) 关键帧动画
+* [keyframe](#252-animationskeyframe-关键帧动画) 关键帧动画
 * 逐帧动画
 
 #### 2.5.1 [transition](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Transitions) 补间动画
@@ -536,6 +537,40 @@ CSS 中动画的类型：
 
 #### 2.5.2 [animations(keyframe)](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Animations) 关键帧动画
 
-### 2.6 预处理器
+### 2.6 CSS 预处理器
+
+* 基于 CSS 的另一种语言
+* 通过工具编译成 CSS
+* 添加了很多 CSS 不具备的特性
+* 提升 CSS 文件的组织
+
+常见的CSS 预处理器：
+
+* [less](http://lesscss.org) | 
+[中文网](http://lesscss.cn) | 
+[Lee - Bootstarp](http://www.bootcss.com/p/lesscss/) | 
+[Github](https://github.com/less/less.js) - 使用 js 编写，入门简单，复杂属性实现不友好
+* [scss(sass)](https://sass-lang.com) | 
+[中文网](https://www.sass.hk) | 
+[scss 在线转换](https://www.sass.hk/css2sass/) | 
+[Github](https://github.com/sass/sass) - 使用 ruby 编写，需要编译，有基于 Node 的 js 版本
+
+CSS 预处理器 实现的功能：
+
+* 嵌套 - 反应层级和约束
+* 变量和计算 - 加少重复代码
+* Extend 和 Mixin - 代码片段（类似于function）
+* 循环 - 适用于复杂有规律的样式
+* import - CSS 文件模块化
+
+CSS 预处理器框架：
+
+* SCSS - [Compass](http://compass-style.org) | 
+[Github](https://github.com/Compass/compass)
+* Less - [Lesshat](http://lesshat.madebysource.com) | 
+[Github](https://github.com/madebysource/lesshat) / [EST](http://ecomfe.github.io/est/) | 
+[Github](https://github.com/ecomfe/est/)
+* 提供现成的 mixin
+* 类似js类库，封装常用功能
 
 ### 2.7 CSS 工程化

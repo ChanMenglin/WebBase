@@ -24,6 +24,7 @@
         * [2.2.1 非布局样式](#221-非布局样式)
             * [2.2.1.1 文字 - 字体](#2211-文字---字体)
             * [2.2.1.2 文字 - 行高](#2212-文字---行高)
+    * [2.3 [CSS 布局]](#23-css-布局)
         * [2.3.1 table 布局](#231-table-布局)
         * [2.3.2 display and position](#232-display-and-position)
             * [2.3.2.1 盒子模型](#2321-盒子模型)
@@ -33,6 +34,15 @@
         * [2.3.4 float 布局](#234-float-布局)
         * [2.3.5 inline-block 布局](#235-inline-block-布局)
         * [2.3.6 响应式布局](#236-响应式布局)
+    * [2.4 CSS 效果](#24-css-效果)
+        * [2.4.1 box-shadow 阴影](#241-box-shadow-阴影)
+        * [2.4.2 text-shadow 文字阴影](#242-text-shadow-文字阴影)
+        * [2.4.3 border-radius 圆角](#243-border-radius-圆角)
+        * [2.4.4 background 背景](#244-background-背景)
+        * [2.4.5 clip-path 裁剪](#245-clip-path-裁剪)
+    * [2.5 CSS 动画](#25-css-动画)
+        * [2.5.1 transition 补间动画](#251-transition-补间动画)
+        * [2.5.2 animations(keyframe) 关键帧动画](#252-animations(keyframe)-关键帧动画)
 
 ## 1. HTML
 
@@ -509,6 +519,22 @@ viewport - `<mate name='viewport' content='width=device-wid th, initial-scale=1.
 * 自定义图形裁剪
 
 ### 2.5 CSS 动画
+
+CSS 中动画的类型：
+
+* [transition](#251-transition-补间动画) 补间动画
+* [keyframe](#252-animations(keyframe)-关键帧动画) 关键帧动画
+* 逐帧动画
+
+#### 2.5.1 [transition](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Transitions) 补间动画
+
+[transition-timing-function(timing/easing)](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transition-timing-function)
+
+[CSS 默认 easing](https://easings.net/zh-cn) | [Github](https://github.com/ai/easings.net)
+
+[自定义 easing](https://matthewlein.com/tools/ceaser)
+
+#### 2.5.2 [animations(keyframe)](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Animations) 关键帧动画
 
 ### 2.6 预处理器
 

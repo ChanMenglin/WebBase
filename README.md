@@ -2,8 +2,8 @@
 
 本仓库包含部分 HTML 知识及全面详实的 CSS 知识。便于开发中的快速查询。
 
-> 前置知识：对 HTML5、CSS3 有一定了解。  
-> 说明：本仓库的名词并不专业严谨，只求便于理解。  
+> 前置知识：对 HTML5、CSS3 有一定了解。
+> 说明：本仓库的名词并不专业严谨，只求便于理解。
 
 # 目录（Contents）
 
@@ -53,7 +53,7 @@
 
 #### 1.1.1 head 元素
 
-head 元素 不会在页面上留下直接的内容，主要为页面相关资源及信息描述。  
+head 元素 不会在页面上留下直接的内容，主要为页面相关资源及信息描述。
 
 * 声明 - [meta](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta)
     * `<meta charset='utf-8'>` - `charset`表示页面使用的字符集
@@ -73,7 +73,7 @@ head 元素 不会在页面上留下直接的内容，主要为页面相关资�
 
 body 元素 的内容会直接出现在页面上。
 
-> 括号中的内容为对应标签在 HTML5 中的语义，更多内容可访问：  
+> 括号中的内容为对应标签在 HTML5 中的语义，更多内容可访问：
 https://developer.mozilla.org/zh-CN/docs/Glossary/语义#语义化元素
 
 * 块级元素 - div / section（文章、文字） / article（文章） / aside（侧边栏、广告） / nav（菜单、导航） / header（头部） / footer（尾部） / i（icon 图标）
@@ -103,7 +103,7 @@ https://developer.mozilla.org/zh-CN/docs/Glossary/语义#语义化元素
         * `img[src]` - 图片地址
         * `img[alt]` - 替换资源，图片不可用时使用
 
-> 延伸：  
+> 延伸：
 > [HTML 参考
 ](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference) | [HTML5
 ](https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5) | [HTML表单指南
@@ -131,22 +131,22 @@ https://www.w3.org/TR/html5/dom.html#kinds-of-content
 
 浏览器会自动为一些元素加默认样式。
 
-[CSS Reset](https://cssreset.com)  
-[CSS Tools: Reset CSS](https://meyerweb.com/eric/tools/css/reset/)  
+[CSS Reset](https://cssreset.com)
+[CSS Tools: Reset CSS](https://meyerweb.com/eric/tools/css/reset/)
 [YUI CSS Reset](https://cssreset.com/scripts/yahoo-css-reset-yui-3/)
 
 CSS Reset 重置默认样式
-[normalize.css](http://necolas.github.io/normalize.css/) | 
+[normalize.css](http://necolas.github.io/normalize.css/) |
 [Github](https://github.com/necolas/normalize.css/)
 
 ## 2. [CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
 
-> CSS：层叠样式表（Cascading Style Sheet）  
-[CSS](https://developer.mozilla.org/zh-CN/docs/Glossary/CSS) | 
+> CSS：层叠样式表（Cascading Style Sheet）
+[CSS](https://developer.mozilla.org/zh-CN/docs/Glossary/CSS) |
 [CSS 参考
 ](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)
 [CSS 教程
-](https://developer.mozilla.org/zh-CN/docs/Learn/CSS) | 
+](https://developer.mozilla.org/zh-CN/docs/Learn/CSS) |
 [CSS 文档
 ](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
 
@@ -210,10 +210,10 @@ CSS Reset 重置默认样式
 
 ##### 2.2.1.1 文字 - 字体
 
-* 字体族（使用字体族时不要加引号）  
+* 字体族（使用字体族时不要加引号）
     serif(衬线字体)、sans-serif(非衬线字体)、monospace(等宽字体)、cursive(手写体)、fantasy(花体)
-* 多字体（fallback）  
-* [网络字体、自定义字体](#网络字体\自定义字体)  
+* 多字体（fallback）
+* [网络字体、自定义字体](#网络字体\自定义字体)
 * iconfont: https://www.iconfont.cn
 
 > 在声明字体时先写平台独有的字体再加字体族是一个好的习惯
@@ -412,7 +412,7 @@ font-family: "IF";
         margin-left:200px;
         margin-right:200px;
     }
-    
+
 </style>
 <div class="container">
     <div class="left">
@@ -454,7 +454,7 @@ font-family: "IF";
         width:600px;
         height:200px;
     }
-    
+
 </style>
 <div class="container">
     <div class="left">
@@ -474,7 +474,7 @@ font-family: "IF";
     * 隐藏 + 折行 + 自适应空间
     * rem(根据字体大小调整) / [viewport](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@viewport) / [media query(媒体查询)](https://developer.mozilla.org/zh-CN/docs/Web/CSS/媒体查询)
 
-viewport - `<mate name='viewport' content='width=device-wid th, initial-scale=1.0, maximum-scale=1.0, user-scalable=no‘>` 
+viewport - `<mate name='viewport' content='width=device-wid th, initial-scale=1.0, maximum-scale=1.0, user-scalable=no‘>`
 
 ### 2.4 CSS 效果
 
@@ -546,14 +546,14 @@ CSS 中动画的类型：
 
 常见的CSS 预处理器：
 
-* [less](http://lesscss.org) | 
-[中文网](http://lesscss.cn) | 
-[Lee - Bootstarp](http://www.bootcss.com/p/lesscss/) | 
+* [less](http://lesscss.org) |
+[中文网](http://lesscss.cn) |
+[Lee - Bootstarp](http://www.bootcss.com/p/lesscss/) |
 [Github](https://github.com/less/less.js) - 使用 js 编写，入门简单，复杂属性实现不友好
-* [scss(sass)](https://sass-lang.com) | 
-[中文网](https://www.sass.hk) | 
-[scss 在线转换](https://www.sass.hk/css2sass/) | 
-[Github](https://github.com/sass/sass) - 使用 ruby 编写，需要编译，有基于 Node 的 js 版本
+* [scss(sass)](https://sass-lang.com) |
+[中文网](https://www.sass.hk) |
+[scss 在线转换](https://www.sass.hk/css2sass/) |
+[Github](https://github.com/sass/sass) - 使用 ruby 编写，需要编译，有基于 Node 的版本
 
 CSS 预处理器 实现的功能：
 
@@ -565,12 +565,34 @@ CSS 预处理器 实现的功能：
 
 CSS 预处理器框架：
 
-* SCSS - [Compass](http://compass-style.org) | 
+* SCSS - [Compass](http://compass-style.org) |
 [Github](https://github.com/Compass/compass)
-* Less - [Lesshat](http://lesshat.madebysource.com) | 
-[Github](https://github.com/madebysource/lesshat) / [EST](http://ecomfe.github.io/est/) | 
+* Less - [Lesshat](http://lesshat.madebysource.com) |
+[Github](https://github.com/madebysource/lesshat) / [EST](http://ecomfe.github.io/est/) |
 [Github](https://github.com/ecomfe/est/)
 * 提供现成的 mixin
 * 类似js类库，封装常用功能
 
 ### 2.7 CSS 工程化
+
+组织 优化 构建 维护
+
+[PostCSS](https://postcss.org) |
+[中文网](https://www.postcss.com.cn)
+[Github](https://github.com/postcss/postcss) |
+[插件](https://www.postcss.parts)
+
+常用插件：
+
+* [import](https://github.com/postcss/postcss-import) - 模块合并
+* [autoprefixer](https://github.com/postcss/autoprefixer) | config: [browserslist]((https://github.com/browserslist/browserslist) ) - 自动加前缀（解决兼容性问题）
+
+* [cssnano](https://cssnano.co) | [Github](https://github.com/cssnano/cssnano) - CSS 压缩
+* [cssnext](http://cssnext.io) |
+[Github](https://github.com/MoOx/postcss-cssnext) | [blog](https://moox.io/blog/deprecating-cssnext/) - 使用新的 CSS 特性
+* [precss](https://github.com/jonathantneal/precss) | [demo](https://jonathantneal.github.io/precss/) - 提供 变量、mixin、循环等特性
+* [css-modules](https://github.com/css-modules/css-modules) - 组件化
+* [styled-components](https://www.styled-components.com/) |
+[Github](https://github.com/styled-components) - 组件化
+
+[browserslist](https://github.com/browserslist/browserslist) - 浏览器列表（数据来自 [can i use](https://caniuse.com))

@@ -44,6 +44,7 @@
         * [2.5.1 transition 补间动画](#251-transition-补间动画)
         * [2.5.2 animations(keyframe) 关键帧动画](#252-animationskeyframe-关键帧动画)
     * [2.6 CSS 预处理器](#26-css-预处理器)
+        * [2.6.1 预处理器之间的语法对照表](#261-预处理器之间的语法对照表)
     * [2.7 CSS 工程化](#27-css-工程化)
 
 ## 1. HTML
@@ -254,7 +255,7 @@ font-family: "IF";
 ```html
 <table>
     <thead>
-        <!-- <th></th>会将标题加粗显示,此处为示范，实际生产中不建议将<td>同<th>混用 -->
+        <!-- <th></th>会将标题加粗显示,此处为示范，实际生产中不建议将<td>同<thead>混用 -->
         <td>标题1</td><td>标题2</td><th>加粗标题</th>
     </thead>
     <tbody>
@@ -568,13 +569,29 @@ CSS 预处理器 实现的功能：
 
 CSS 预处理器框架：
 
-* SCSS - [Compass](http://compass-style.org) |
-[Github](https://github.com/Compass/compass)
-* Less - [Lesshat](http://lesshat.madebysource.com) |
-[Github](https://github.com/madebysource/lesshat) / [EST](http://ecomfe.github.io/est/) |
+* SCSS  
+**Compass** - [Page](http://compass-style.org) |
+[Github](https://github.com/Compass/compass) 封装有兼容性问题的属性
+* Less  
+**Lesshat** - [Page](http://lesshat.madebysource.com) |
+[Github](https://github.com/madebysource/lesshat)  
+**EST** - [Page](http://ecomfe.github.io/est/) |
 [Github](https://github.com/ecomfe/est/)
 * 提供现成的 mixin
 * 类似js类库，封装常用功能
+
+#### 2.6.1 预处理器之间的语法对照表
+
+> css 预处理器（less/scss）之间的语法对比  
+
+| 对比项 | less(`.less`) | scss/sass(`.scss`) | css(`.css`) | 说明 |
+| ----- | ---- | ---- | --- | ---- |
+| 嵌套   | `.wrapper {`<br/>&emsp;`background: white;`<br>&emsp;`a {`<br/>&emsp;&emsp;`font-size: 12px;`<br/>&emsp;&emsp;`&:hover {`<br/>&emsp;&emsp;&emsp;`background: red;`<br/>&emsp;&emsp;`}`<br/>`}` | `.wrapper {`<br/>&emsp;`background: white;`<br>&emsp;`a {`<br/>&emsp;&emsp;`font-size: 12px;`<br/>&emsp;&emsp;`&:hover {`<br/>&emsp;&emsp;&emsp;`background: red;`<br/>&emsp;&emsp;`}`<br/>`}` | `.wrapper { background: white; }`<br/>`.wrapper a { font-size: 12px; }`<br/>`.wrapper a:hover { background: red; }` | less 和 scss 的嵌套语法完全相同。<br />`&` 表示与所在括号的选择器同级 | <!-- 嵌套 -->
+| 变量   | `@fontsice: 12px;`<br />`@bgcolor: red;`<br />`font-size: @fontsize;`<br />`background: lighten(@bgcolor, 40%);`<br />`border-color: @bgcolor;` | `$fontsice: 12px;`<br />`$bgcolor: red;`<br />`font-size: $fontsize;`<br />`background: lighten($bgcolor, 40%);`<br />`border-color: $bgcolor;` | `font-size: 12px;`<br />`background: #ffcccc;`<br />`border-color: red;` | **less** 中使用 `@` 声明变量<br />**scss** 中使用 `$` 声明变量<br />**作用**：提高代码的可维护性，降低 css 样式的修改成本。<br />**变量**：包含单位，运算时也会带单位运算。<br />由于 css 中不存在变量，因此生成的 css 文件会将变量替换成计算后的结果，变量的声明会被丢弃。 | <!-- 变量 -->
+| mixin<br />(混入)  | `@bgcolor: green;`<br />`.mixin_bg(@bgcolor) {`<br />&emsp;`background: @bgcolor;`<br />&emsp;`font-size: 12px;`<br />`}`<br />`.bg {`<br />&emsp;`.mixin_bg(@bgcolor)`<br />&emsp;`border-color: red;`<br />`}` | `$bgcolor: green;`<br />`@mixin mixin_bg($bgcolor) {`<br />&emsp;`background: $bgcolor;`<br />&emsp;`font-size: 12px;`<br />`}`<br />`.bg {`<br />&emsp;`@include mixin_bg($bgcolor)`<br />&emsp;`border-color: red;`<br />`}` | `.bg { background: green; font-size: 12px; border-color: red; }` | **less** 中的 mixin<br />声明：`.mixin名称([参数（可选）]){ 样式 }`，<br />调用：`.mixin名称([参数])`<br />**scss** 中的 mixin<br />声明：`@mixin mixin名称([参数（可选）]){ 样式 }`<br />调用：`@include mixin名称([参数])`<br />**作用**：提高代码的可维护性，提取重复样式，在 css 中进行代码复用。<br />**副作用**：在过多使用后会导致生成的 css 样式文件的重复代码增多，可通过使用 extend(继承) 解决。<br />**mixin(混入)**：可认为是对重复样式的包装和复用，类似于面向对象语言中的方法，可带有参数。mixin 定义后可直接调用，mixin 中也可以调用 mixin。<br />由于 css 中不存在 mixin，因此生成的 css 文件会将 mixin 中的样式复制到调用的地方（变量会先进行计算），mixin 的声明会被丢弃。<br />**注意**：less 中不带参数的 mixin 与 css class 语法上只差一对小括号，css class 也可以作为 mixin 调用，且会保留在编译后的 css 文件中（mixin 会被丢弃），但个人不推荐将 css class 作为 mixin 调用，以免混淆。scss 中没有这个问题。 | <!-- mixin -->
+| extend<br />(继承) | `.bg {`<br />&emsp;`background: white;`<br />&emsp;`font-size: 12px;`<br />`}`<br />`.nav:extend(.bg) {`<br />&emsp;`border: red;`<br />`}`<br />`.banner {`<br />&emsp;`&:extend(.bg)`<br />&emsp;`border: green;`<br />`}` | `.bg {`<br />&emsp;`background: white;`<br />&emsp;`font-size: 12px;`<br />`}`<br />`.nav {`<br />&emsp;`@extend .bg;`<br />&emsp;`border: red;`<br />`}`<br />`.banner {`<br />&emsp;`@extend .bg;`<br />&emsp;`border: green;`<br />`}` | `.bg .nav .banner { background: white; font-size: 12px; }`<br />`.nav { border: red; }`<br />`.banner { border: green; }` | **less** 中使用 extend：`:extend(.类名)`<br />**scss** 中使用 extend：`@extend .类名;`<br />**作用**：提取选择器，将公共样式写在一起，在 css 中进行代码复用，解决 mixin 可能造成的生成 css 文件重复代码过多的问题。<br />**extend(继承)**：可认为是对 mixin 的升级，但二者在编译生成时有较大差异：extend 会将重复的样式提取出来放到单独的选择器中，可更好的完成代码的复用，并且不会造成过多的代码重复的问题。 | <!-- extend -->
+| loop<br />(循环)   | 递归：<br />`.gen(@n) when (@n > 0) {`<br />&emsp;`.gen(@n - 1);`<br />&emsp;`.cot-@{n} {`<br />&emsp;&emsp;`width: 100px/3*@n;`<br />&emsp;`}`<br />`}`<br />`gen(3);` | 递归：<br />`@mixin gen($n) {`<br />&emsp;`@if ($n > 0) {`<br />&emsp;&emsp;`@include gen($n - 1);`<br />&emsp;&emsp;`.col-#{$n} {`<br />&emsp;&emsp;&emsp;`width: 100px/3*$n;`<br />&emsp;&emsp;`}`<br />&emsp;`}`<br />`}`<br />`gen(3);`<br />循环：<br />`@for $i from 1 through 3 {`<br />&emsp;`.col-#{$i} {`<br />&emsp;&emsp;`width: 100px/3*$i;`<br />`}` | `.col-1 { width: 100ox; }`<br />`.col-2 { width: 200ox; }`<br />`.col-3 { width: 300ox; }` | **less** 中的循环：<br />递归：`.mixin名称(计数器) when (退出条件) { .mixin名称(计数器 - 1); 循环体; }`<br />**scss** 中的循环：<br />递归：`@mixin mixin名称(计数器) { @if (退出条件) { @include mixin名称(计数器 - 1); 循环体; } }`<br />循环：`@for 计数器 from 起始点 through 结束点 { 循环体 }`<br />**作用**：生成高度有规律的样式。<br />**loop(循环)**：循环生成样式。less 中只能使用递归的方式实现循环；sess 中可使用递归和 for 循环两种方式实现循环。 | <!-- loop -->
+| import<br />(模块化) | `@import "url"` | `@import "url"` | - | less 与 scss 中的 import 语法形式与 css 原生 `@import` 相同：`@import "url"`<br />**作用**：css 模块化，提高代码可维护性，解决 css 中默认 `@import` 不合并，不复用链接导致的 http 请求较多导致的性能问题。<br />**import(模块化)**：将引入的 css 模块合并为一个文件，在模块细分，文件细碎时能显著减少生成的 css 文件数量，有效减少 http 请求数量，提高性能。 | <!-- import -->
 
 ### 2.7 CSS 工程化
 
@@ -584,6 +601,7 @@ CSS 预处理器框架：
 [中文网](https://www.postcss.com.cn)
 [Github](https://github.com/postcss/postcss) |
 [插件](https://www.postcss.parts)
+[Gitter](https://gitter.im/postcss/postcss) - 用 JavaScript 工具和插件转换 CSS 代码的工具
 
 常用插件：
 

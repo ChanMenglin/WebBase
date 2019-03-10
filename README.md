@@ -584,7 +584,7 @@ CSS 预处理器框架：
 
 > css 预处理器（less/scss）之间的语法对比  
 
-| 对比项 | less(`.less`) | scss/sass(`.scss`) | css(`.css`) | 说明 |
+| 项目 | less(`.less`) | scss/sass(`.scss`) | css(`.css`) | 说明 |
 | ----- | ---- | ---- | --- | ---- |
 | 嵌套   | `.wrapper {`<br/>&emsp;`background: white;`<br>&emsp;`a {`<br/>&emsp;&emsp;`font-size: 12px;`<br/>&emsp;&emsp;`&:hover {`<br/>&emsp;&emsp;&emsp;`background: red;`<br/>&emsp;&emsp;`}`<br/>`}` | `.wrapper {`<br/>&emsp;`background: white;`<br>&emsp;`a {`<br/>&emsp;&emsp;`font-size: 12px;`<br/>&emsp;&emsp;`&:hover {`<br/>&emsp;&emsp;&emsp;`background: red;`<br/>&emsp;&emsp;`}`<br/>`}` | `.wrapper { background: white; }`<br/>`.wrapper a { font-size: 12px; }`<br/>`.wrapper a:hover { background: red; }` | less 和 scss 的嵌套语法完全相同。<br />`&` 表示与所在括号的选择器同级 | <!-- 嵌套 -->
 | 变量   | `@fontsice: 12px;`<br />`@bgcolor: red;`<br />`font-size: @fontsize;`<br />`background: lighten(@bgcolor, 40%);`<br />`border-color: @bgcolor;` | `$fontsice: 12px;`<br />`$bgcolor: red;`<br />`font-size: $fontsize;`<br />`background: lighten($bgcolor, 40%);`<br />`border-color: $bgcolor;` | `font-size: 12px;`<br />`background: #ffcccc;`<br />`border-color: red;` | **less** 中使用 `@` 声明变量<br />**scss** 中使用 `$` 声明变量<br />**作用**：提高代码的可维护性，降低 css 样式的修改成本。<br />**变量**：包含单位，运算时也会带单位运算。<br />由于 css 中不存在变量，因此生成的 css 文件会将变量替换成计算后的结果，变量的声明会被丢弃。 | <!-- 变量 -->

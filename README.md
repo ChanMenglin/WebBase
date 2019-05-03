@@ -5,6 +5,9 @@
 > 前置知识：对 HTML5、CSS3 有一定了解。
 > 说明：本仓库的名词并不专业严谨，只求便于理解。
 
+> 在阅读以下内容之前可先阅读： [HTML5&CSS3 basic (HTML5 和 CSS3 基础)](https://chanmenglin.github.io/HTML5-CSS3-basic/) | 
+[Github](https://github.com/ChanMenglin/HTML5-CSS3-basic)  
+
 # 目录（Contents）
 
 * [1. HTML](#1-html)

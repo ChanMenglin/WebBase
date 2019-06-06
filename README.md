@@ -45,7 +45,15 @@
         * [2.5.2 animations(keyframe) 关键帧动画](#252-animationskeyframe-关键帧动画)
     * [2.6 CSS 预处理器](#26-css-预处理器)
         * [2.6.1 预处理器之间的语法对照表](#261-预处理器之间的语法对照表)
+            * [2.6.1.1 嵌套](#2611-嵌套)
+            * [2.6.1.2 变量](#2612-变量)
+            * [2.6.1.3 mixin (混入)](#2613-mixin-混入)
+            * [2.6.1.4 extend (继承)](#2614-extend-继承)
+            * [2.6.1.5 loop (循环)](#2615-loop-循环)
+            * [2.6.1.6 import (模块化)](#2616-import-模块化)
     * [2.7 CSS 工程化](#27-css-工程化)
+
+[back to top]: #-目录contents
 
 ## 1. HTML
 
@@ -70,6 +78,8 @@ head 元素 不会在页面上留下直接的内容，主要为页面相关资�
 * 链接 - [link](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/link)
 * 脚本 - [script](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script)
 * 制定基础路径 - [base](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/base)`<base href="" />`（较少使用，设置此标签则表示本页面中所有链接都基于此路径）
+
+[back to top]
 
 #### 1.1.2 body 元素
 
@@ -112,6 +122,7 @@ https://developer.mozilla.org/zh-CN/docs/Glossary/语义#语义化元素
 ](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms) | [SEO(语义
 )](https://developer.mozilla.org/zh-CN/docs/Glossary/语义)
 
+[back to top]
 
 ### 1.2 HTML 元素分类
 
@@ -120,6 +131,7 @@ https://developer.mozilla.org/zh-CN/docs/Glossary/语义#语义化元素
 按内容分类：
 https://www.w3.org/TR/html5/dom.html#kinds-of-content
 
+[back to top]
 
 ### 1.3 HTML 元素嵌套关系
 
@@ -128,6 +140,8 @@ https://www.w3.org/TR/html5/dom.html#kinds-of-content
 * 行内元素一般不能包含块级元素
 
 > 延伸：[Text-level semantics](https://www.w3.org/TR/html5/textlevel-semantics.html) | [22 Transitional Document Type Definition](https://www.w3.org/TR/1999/REC-html401-19991224/sgml/loosedtd.html) | [Allowed nesting of elements in HTML 4 (and XHTML 1.0)](http://jkorpela.fi/html/nesting.html)
+
+[back to top]
 
 ### 1.4 HTML 元素的默认样式
 
@@ -143,6 +157,8 @@ CSS Reset 重置默认样式
 
 [ex](Code/cssreset.css)
 
+[back to top]
+
 ## 2. [CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
 
 > CSS：层叠样式表（Cascading Style Sheet）
@@ -153,6 +169,8 @@ CSS Reset 重置默认样式
 ](https://developer.mozilla.org/zh-CN/docs/Learn/CSS) |
 [CSS 文档
 ](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
+
+[back to top]
 
 ### 2.1 CSS 基础
 
@@ -167,11 +185,15 @@ CSS Reset 重置默认样式
 
 > 值后面的分号(`;`)可以不加，但建议为每一行加上分号
 
+[back to top]
+
 #### 2.1.2 [选择器](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/Selectors)
 
 * 匹配 HTML 元素
 * 有不同的匹配规则
 * 多个选择器可叠加
+
+[back to top]
 
 ##### 2.1.2.1 [选择器的分类](https://developer.mozilla.org/zh-CN/search?q=选择器&topic=api&topic=css&topic=canvas&topic=html&topic=http&topic=js&topic=svg&topic=standards&topic=webdev&topic=webext&topic=webgl&topic=apps&topic=mobile)
 
@@ -184,6 +206,8 @@ CSS Reset 重置默认样式
 7. 否定选择器 - :not(...)
 8. 通用选择器 - * (匹配所有元素)
 9. [组合选择器](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/Combinators_and_multiple_selectors)
+
+[back to top]
 
 ##### 2.1.2.2 [选择器的权重](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity)
 
@@ -202,6 +226,8 @@ CSS Reset 重置默认样式
 * 内联样式 优先级高（高于 ID 选择器）
 * 相同权重 后写的生效
 
+[back to top]
+
 ### 2.2 CSS [布局](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout)
 
 #### 2.2.1 非布局样式
@@ -211,6 +237,8 @@ CSS Reset 重置默认样式
 * 页面 - 滚动、换行
 * 装饰性样式 - 粗体(font-weight)、斜体(font-style:itatic)、下划线(text-decoration)
 * 其它 - 指针(cursor:point)、[CSS Hack](https://en.wikipedia.org/wiki/CSS_hack) (目前较少使用)
+
+[back to top]
 
 ##### 2.2.1.1 文字 - 字体
 
@@ -226,6 +254,8 @@ CSS Reset 重置默认样式
 > ```
 > 由于苹果用户在安装Office后也会有 `Microsoft Yahei`，但 `Microsoft Yahei` 在Mac上的效果不如 `PingFang SC` 因此将 `PingFang SC` 在前面
 
+[back to top]
+
 ###### 网络字体\自定义字体
 
 ```css
@@ -236,10 +266,13 @@ CSS Reset 重置默认样式
 }
 font-family: "IF";
 ```
+[back to top]
 
 ##### 2.2.1.2 文字 - 行高
 
 行高由 line box 的高度决定，line box 的高度由 inline box 的高度决定
+
+[back to top]
 
 ### 2.3 [CSS 布局](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout)
 
@@ -249,6 +282,8 @@ font-family: "IF";
 * [float 浮动 + margin](#234-float-布局)
 * [inline-block 布局](#235-inline-block-布局)
 * [flexbox 布局](#233-flexbox-布局)
+
+[back to top]
 
 #### 2.3.1 table 布局
 
@@ -297,6 +332,8 @@ font-family: "IF";
 </div>
 ```
 
+[back to top]
+
 #### 2.3.2 display and position
 
 ##### 2.3.2.1 盒子模型
@@ -304,6 +341,8 @@ font-family: "IF";
 ![盒模型](img/盒模型.jpg)
 
 盒子占用的空寂 = height/width(content) + padding + border
+
+[back to top]
 
 ##### 2.3.2.2 [display](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display) - 元素的显示类型
 
@@ -313,6 +352,8 @@ font-family: "IF";
 * inline(内联元素/行内元素) - 没有独立宽高，默认不独立占据一行（类似于文本）
 * inline-block(行内快极元素) - 对内相当于block有独立的宽高；对外相当于inline不会独立占据一行（类似于文本）
 
+[back to top]
+
 ##### 2.3.2.3 [position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/position) - 元素的位置
 
 常用属性：
@@ -321,6 +362,8 @@ font-family: "IF";
 * relative(相对定位) - 相对于元素本身，relative 的偏移(top/left/right)，相对于元素本身，偏移后占用空间的计算仍按偏移之前的位置进行计算（偏移时不会改变它占据的空间）。可添加 z-index 样式定义层级。
 * absolute(绝对定位) - 相对于最近的 relative 或 absolute(父元素) 定位，如果找不到则相对于 body 定位，脱离文档流，不会对其它元素的布局产生影响。可添加 z-index 样式定义层级。
 * fixed(固定定位) - 相对于可视区域定位，脱离文档流，不会对其它元素的布局产生影响。可添加 z-index 样式定义层级。
+
+[back to top]
 
 #### 2.3.3 [flexbox](https://developer.mozilla.org/en-US/docs/Glossary/Flexbox) 布局
 
@@ -356,6 +399,8 @@ font-family: "IF";
     </div>
 </div>
 ```
+
+[back to top]
 
 #### 2.3.4 [float 布局](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Floats)
 
@@ -431,6 +476,8 @@ font-family: "IF";
 </div>
 ```
 
+[back to top]
+
 #### 2.3.5 inline-block 布局
 
 * 像文本一样排 block 元素
@@ -470,6 +517,8 @@ font-family: "IF";
 </div>
 ```
 
+[back to top]
+
 #### 2.3.6 响应式布局
 
 * 在不同设备上正常使用
@@ -479,6 +528,8 @@ font-family: "IF";
     * rem(根据字体大小调整) / [viewport](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@viewport) / [media query(媒体查询)](https://developer.mozilla.org/zh-CN/docs/Web/CSS/媒体查询)
 
 viewport - `<mate name='viewport' content='width=device-wid th, initial-scale=1.0, maximum-scale=1.0, user-scalable=no‘>`
+
+[back to top]
 
 ### 2.4 CSS 效果
 
@@ -490,6 +541,8 @@ viewport - `<mate name='viewport' content='width=device-wid th, initial-scale=1.
 * [background](#244-background-背景) - 背景
 * [clip-path](#245-clip-path-裁剪) - 裁剪
 
+[back to top]
+
 #### 2.4.1 [box-shadow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow) 阴影
 
 ![box-shadow](img/box-shadow.jpg)
@@ -498,10 +551,14 @@ viewport - `<mate name='viewport' content='width=device-wid th, initial-scale=1.
 * 充当没有宽度的边框 - `box-shadow:0, 0, 0, 5px, #000;` 就可以画出一个 5px 宽的黑色边框。
 * 特殊效果
 
+[back to top]
+
 #### 2.4.2 [text-shadow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-shadow) 文字阴影
 
 * 营造立体感（层次感）
 * 品质感
+
+[back to top]
 
 #### 2.4.3 [border-radius](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-radius) 圆角
 
@@ -510,6 +567,8 @@ viewport - `<mate name='viewport' content='width=device-wid th, initial-scale=1.
 * 半圆 / 扇形 `border-top-left-radius: 100%;`
 * 奇怪的角
 
+[back to top]
+
 #### 2.4.4 [background](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background) 背景
 
 * 纹理、图案
@@ -517,11 +576,15 @@ viewport - `<mate name='viewport' content='width=device-wid th, initial-scale=1.
 * [雪碧图](https://zh.wikipedia.org/wiki/精灵图)动画
 * 背景图尺寸适应
 
+[back to top]
+
 #### 2.4.5 [clip-path](https://developer.mozilla.org/zh-CN/docs/Web/CSS/clip-path) 裁剪
 
 * 裁剪容器
 * 按几何图形裁剪
 * 自定义图形裁剪
+
+[back to top]
 
 ### 2.5 CSS 动画
 
@@ -531,6 +594,8 @@ CSS 中动画的类型：
 * [keyframe](#252-animationskeyframe-关键帧动画) 关键帧动画
 * 逐帧动画
 
+[back to top]
+
 #### 2.5.1 [transition](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Transitions) 补间动画
 
 [transition-timing-function(timing/easing)](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transition-timing-function)
@@ -538,6 +603,8 @@ CSS 中动画的类型：
 [CSS 默认 easing](https://easings.net/zh-cn) | [Github](https://github.com/ai/easings.net)
 
 [自定义 easing](https://matthewlein.com/tools/ceaser)
+
+[back to top]
 
 #### 2.5.2 [animations(keyframe)](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Animations) 关键帧动画
 
@@ -580,18 +647,271 @@ CSS 预处理器框架：
 * 提供现成的 mixin
 * 类似js类库，封装常用功能
 
+[back to top]
+
 #### 2.6.1 预处理器之间的语法对照表
 
 > css 预处理器（less/scss）之间的语法对比  
 
-| 项目 | less(`.less`) | scss/sass(`.scss`) | css(`.css`) | 说明 |
-| ----- | ---- | ---- | --- | ---- |
-| 嵌套   | `.wrapper {`<br/>&emsp;`background: white;`<br>&emsp;`a {`<br/>&emsp;&emsp;`font-size: 12px;`<br/>&emsp;&emsp;`&:hover {`<br/>&emsp;&emsp;&emsp;`background: red;`<br/>&emsp;&emsp;`}`<br/>`}` | `.wrapper {`<br/>&emsp;`background: white;`<br>&emsp;`a {`<br/>&emsp;&emsp;`font-size: 12px;`<br/>&emsp;&emsp;`&:hover {`<br/>&emsp;&emsp;&emsp;`background: red;`<br/>&emsp;&emsp;`}`<br/>`}` | `.wrapper { background: white; }`<br/>`.wrapper a { font-size: 12px; }`<br/>`.wrapper a:hover { background: red; }` | less 和 scss 的嵌套语法完全相同。<br />`&` 表示与所在括号的选择器同级 | <!-- 嵌套 -->
-| 变量   | `@fontsice: 12px;`<br />`@bgcolor: red;`<br />`font-size: @fontsize;`<br />`background: lighten(@bgcolor, 40%);`<br />`border-color: @bgcolor;` | `$fontsice: 12px;`<br />`$bgcolor: red;`<br />`font-size: $fontsize;`<br />`background: lighten($bgcolor, 40%);`<br />`border-color: $bgcolor;` | `font-size: 12px;`<br />`background: #ffcccc;`<br />`border-color: red;` | **less** 中使用 `@` 声明变量<br />**scss** 中使用 `$` 声明变量<br />**作用**：提高代码的可维护性，降低 css 样式的修改成本。<br />**变量**：包含单位，运算时也会带单位运算。<br />由于 css 中不存在变量，因此生成的 css 文件会将变量替换成计算后的结果，变量的声明会被丢弃。 | <!-- 变量 -->
-| mixin<br />(混入)  | `@bgcolor: green;`<br />`.mixin_bg(@bgcolor) {`<br />&emsp;`background: @bgcolor;`<br />&emsp;`font-size: 12px;`<br />`}`<br />`.bg {`<br />&emsp;`.mixin_bg(@bgcolor)`<br />&emsp;`border-color: red;`<br />`}` | `$bgcolor: green;`<br />`@mixin mixin_bg($bgcolor) {`<br />&emsp;`background: $bgcolor;`<br />&emsp;`font-size: 12px;`<br />`}`<br />`.bg {`<br />&emsp;`@include mixin_bg($bgcolor)`<br />&emsp;`border-color: red;`<br />`}` | `.bg { background: green; font-size: 12px; border-color: red; }` | **less** 中的 mixin<br />声明：`.mixin名称([参数（可选）]){ 样式 }`，<br />调用：`.mixin名称([参数])`<br />**scss** 中的 mixin<br />声明：`@mixin mixin名称([参数（可选）]){ 样式 }`<br />调用：`@include mixin名称([参数])`<br />**作用**：提高代码的可维护性，提取重复样式，在 css 中进行代码复用。<br />**副作用**：在过多使用后会导致生成的 css 样式文件的重复代码增多，可通过使用 extend(继承) 解决。<br />**mixin(混入)**：可认为是对重复样式的包装和复用，类似于面向对象语言中的方法，可带有参数。mixin 定义后可直接调用，mixin 中也可以调用 mixin。<br />由于 css 中不存在 mixin，因此生成的 css 文件会将 mixin 中的样式复制到调用的地方（变量会先进行计算），mixin 的声明会被丢弃。<br />**注意**：less 中不带参数的 mixin 与 css class 语法上只差一对小括号，css class 也可以作为 mixin 调用，且会保留在编译后的 css 文件中（mixin 会被丢弃），但个人不推荐将 css class 作为 mixin 调用，以免混淆。scss 中没有这个问题。 | <!-- mixin -->
-| extend<br />(继承) | `.bg {`<br />&emsp;`background: white;`<br />&emsp;`font-size: 12px;`<br />`}`<br />`.nav:extend(.bg) {`<br />&emsp;`border: red;`<br />`}`<br />`.banner {`<br />&emsp;`&:extend(.bg)`<br />&emsp;`border: green;`<br />`}` | `.bg {`<br />&emsp;`background: white;`<br />&emsp;`font-size: 12px;`<br />`}`<br />`.nav {`<br />&emsp;`@extend .bg;`<br />&emsp;`border: red;`<br />`}`<br />`.banner {`<br />&emsp;`@extend .bg;`<br />&emsp;`border: green;`<br />`}` | `.bg .nav .banner { background: white; font-size: 12px; }`<br />`.nav { border: red; }`<br />`.banner { border: green; }` | **less** 中使用 extend：`:extend(.类名)`<br />**scss** 中使用 extend：`@extend .类名;`<br />**作用**：提取选择器，将公共样式写在一起，在 css 中进行代码复用，解决 mixin 可能造成的生成 css 文件重复代码过多的问题。<br />**extend(继承)**：可认为是对 mixin 的升级，但二者在编译生成时有较大差异：extend 会将重复的样式提取出来放到单独的选择器中，可更好的完成代码的复用，并且不会造成过多的代码重复的问题。 | <!-- extend -->
-| loop<br />(循环)   | 递归：<br />`.gen(@n) when (@n > 0) {`<br />&emsp;`.gen(@n - 1);`<br />&emsp;`.cot-@{n} {`<br />&emsp;&emsp;`width: 100px/3*@n;`<br />&emsp;`}`<br />`}`<br />`gen(3);` | 递归：<br />`@mixin gen($n) {`<br />&emsp;`@if ($n > 0) {`<br />&emsp;&emsp;`@include gen($n - 1);`<br />&emsp;&emsp;`.col-#{$n} {`<br />&emsp;&emsp;&emsp;`width: 100px/3*$n;`<br />&emsp;&emsp;`}`<br />&emsp;`}`<br />`}`<br />`gen(3);`<br />循环：<br />`@for $i from 1 through 3 {`<br />&emsp;`.col-#{$i} {`<br />&emsp;&emsp;`width: 100px/3*$i;`<br />`}` | `.col-1 { width: 100ox; }`<br />`.col-2 { width: 200ox; }`<br />`.col-3 { width: 300ox; }` | **less** 中的循环：<br />递归：`.mixin名称(计数器) when (退出条件) { .mixin名称(计数器 - 1); 循环体; }`<br />**scss** 中的循环：<br />递归：`@mixin mixin名称(计数器) { @if (退出条件) { @include mixin名称(计数器 - 1); 循环体; } }`<br />循环：`@for 计数器 from 起始点 through 结束点 { 循环体 }`<br />**作用**：生成高度有规律的样式。<br />**loop(循环)**：循环生成样式。less 中只能使用递归的方式实现循环；sess 中可使用递归和 for 循环两种方式实现循环。 | <!-- loop -->
-| import<br />(模块化) | `@import "url"` | `@import "url"` | - | less 与 scss 中的 import 语法形式与 css 原生 `@import` 相同：`@import "url"`<br />**作用**：css 模块化，提高代码可维护性，解决 css 中默认 `@import` 不合并，不复用链接导致的 http 请求较多导致的性能问题。<br />**import(模块化)**：将引入的 css 模块合并为一个文件，在模块细分，文件细碎时能显著减少生成的 css 文件数量，有效减少 http 请求数量，提高性能。 | <!-- import -->
+[back to top]
+
+##### 2.6.1.1 嵌套
+
+1. less 和 scss 的嵌套语法完全相同。
+2. `&` 表示与所在括号的选择器同级
+
+* css(.css)
+
+```css
+.wrapper { background: white; }
+.wrapper a { font-size: 12px; }
+.wrapper a:hover { background: red; }
+```
+
+* less(.less)
+
+```less
+.wrapper {
+    background: white;
+    a { font-size: 12px;
+        &:hover { background: red; }
+    }
+}
+```
+
+* scss/sass(.scss)
+
+```scss
+.wrapper {
+    background: white;
+    a { font-size: 12px;
+        &:hover { background: red; }
+    }
+}
+```
+
+[back to top]
+
+##### 2.6.1.2 变量
+
+**less** 中使用 `@` 声明变量  
+**scss** 中使用 `$` 声明变量  
+**作用** 提高代码的可维护性，降低 css 样式的修改成本。  
+**变量** 包含单位，运算时也会带单位运算。  
+由于 css 中不存在变量，因此生成的 css 文件会将变量替换成计算后的结果，变量的声明会被丢弃。
+
+* css(.css)
+
+```css
+font-size: 12px;
+background: #ffcccc;
+border-color: red;
+```
+
+* less(.less)
+
+```less
+@fontsice: 12px;
+@bgcolor: red;
+font-size: @fontsize;
+background: lighten(@bgcolor, 40%);
+border-color: @bgcolor;
+```
+
+* scss/sass(.scss)
+
+```scss
+$fontsice: 12px;
+$bgcolor: red;
+font-size: $fontsize;
+background: lighten($bgcolor, 40%);
+border-color: $bgcolor;
+```
+
+[back to top]
+
+##### 2.6.1.3 mixin (混入)
+
+less 中的 mixin  
+**声明** `.mixin名称([参数（可选）]){ 样式 }`  
+**调用** `.mixin名称([参数])`  
+scss 中的 mixin  
+**声明** `@mixin mixin名称([参数（可选）]){ 样式 }`  
+**调用** `@include mixin名称([参数])`  
+**作用** 提高代码的可维护性，提取重复样式，在 css 中进行代码复用。
+副作用：在过多使用后会导致生成的 css 样式文件的重复代码增多，可通过使用 **extend(继承)** 解决。  
+**mixin(混入)** 可认为是对重复样式的包装和复用，类似于面向对象语言中的方法，可带有参数。mixin 定义后可直接调用，mixin 中也可以调用 mixin。  
+由于 css 中不存在 mixin，因此生成的 css 文件会将 mixin 中的样式复制到调用的地方（变量会先进行计算），mixin 的声明会被丢弃。  
+**注意** less 中不带参数的 mixin 与 css class 语法上只差一对小括号，css class 也可以作为 mixin 调用，且会保留在编译后的 css 文件中（mixin 会被丢弃），但个人不推荐将 css class 作为 mixin 调用，以免混淆。scss 中没有这个问题。
+
+* css(.css)
+
+```css
+.bg { background: green; font-size: 12px; border-color: red; }
+```
+
+* less(.less)
+
+```less
+@bgcolor: green;
+.mixin_bg(@bgcolor) {
+    background: @bgcolor;
+    font-size: 12px;
+}
+.bg {
+    .mixin_bg(@bgcolor)
+    border-color: red;
+}
+```
+
+* scss/sass(.scss)
+
+```scss
+$bgcolor: green;
+@mixin mixin_bg($bgcolor) {
+    background: $bgcolor;
+    font-size: 12px;
+}
+.bg {
+    @include mixin_bg($bgcolor)
+    border-color: red;
+}
+```
+
+[back to top]
+
+##### 2.6.1.4 extend (继承)
+
+less 中使用 extend：`:extend(.类名)`  
+scss 中使用 extend：`@extend .类名`  
+**作用** 提取选择器，将公共样式写在一起，在 css 中进行代码复用，解决 mixin 可能造成的生成 css 文件重复代码过多的问题。  
+**extend(继承)** 可认为是对 mixin 的升级，但二者在编译生成时有较大差异：extend 会将重复的样式提取出来放到单独的选择器中，可更好的完成代码的复用，并且不会造成过多的代码重复的问题。  
+
+* css(.css)
+
+```css
+.bg .nav .banner { background: white; font-size: 12px; }
+.nav { border: red; }
+.banner { border: green; }
+```
+
+* less(.less)
+
+```less
+.bg {
+    background: white;
+    font-size: 12px;
+}
+.nav:extend(.bg) {
+    border: red;
+}
+.banner {
+    &:extend(.bg)
+    border: green;
+}
+```
+
+* scss/sass(.scss)
+
+```scss
+.bg {
+    background: white;
+    font-size: 12px;
+}
+.nav {
+    @extend .bg;
+    border: red;
+}
+.banner {
+    @extend .bg;
+    border: green;
+}
+```
+
+[back to top]
+
+##### 2.6.1.5 loop (循环)
+
+less 中的循环  
+**递归** `.mixin名称(计数器) when (退出条件) { .mixin名称(计数器 - 1); 循环体; }`  
+scss 中的循环  
+**递归** `@mixin mixin名称(计数器) { @if (退出条件) { @include mixin名称(计数器 - 1); 循环体; } }`  
+**循环** `@for 计数器 from 起始点 through 结束点 { 循环体 }`  
+**作用** 生成高度有规律的样式。  
+**loop(循环)** 循环生成样式。  
+less 中只能使用递归的方式实现循环；  
+sess 中可使用递归和 for 循环两种方式实现循环。  
+
+* css(.css)
+
+```css
+.col-1 { width: 100ox; }
+.col-2 { width: 200ox; }
+.col-3 { width: 300ox; }
+```
+
+* less(.less)
+
+递归：
+
+```less
+.gen(@n) when (@n > 0) {
+    .gen(@n - 1);
+    .cot-@{n} {
+        width: 100px/3*@n;
+    }
+}
+gen(3);
+```
+
+* scss/sass(.scss)
+
+递归
+
+```scss
+@mixin gen($n) {
+    @if ($n > 0) {
+         @include gen($n - 1);
+        .col-#{$n} {
+            width: 100px/3*$n;
+        }
+    }
+}
+gen(3);
+```
+
+循环
+
+```scss
+@for $i from 1 through 3 {
+    .col-#{$i} {
+        width: 100px/3*$i;
+    }
+}
+gen(3);
+```
+
+[back to top]
+
+##### 2.6.1.6 import (模块化)
+
+less 与 scss 中的 import 语法形式与 css 原生 `@import` 相同：`@import "url"`  
+**作用** css 模块化，提高代码可维护性，解决 css 中默认 @import 不合并，不复用链接导致的 http 请求较多导致的性能问题。  
+**import(模块化)** 将引入的 css 模块合并为一个文件，在模块细分，文件细碎时能显著减少生成的 css 文件数量，有效减少 http 请求数量，提高性能。  
+
+* less(.less)
+
+```less
+@import "url"
+```
+
+* scss/sass(.scss)
+
+```scss
+@import "url"
+```
+
+[back to top]
 
 ### 2.7 CSS 工程化
 
